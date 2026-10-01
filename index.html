@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | Task Management</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="bi bi-check2-square"></i>
+                </div>
+
+                <span>TaskFlow</span>
+            </div>
+
+            <nav>
+
+                <p class="nav-title">WORKSPACE</p>
+
+                <button class="nav-item active" data-filter="all">
+                    <i class="bi bi-grid"></i>
+                    <span>All Tasks</span>
+                </button>
+
+                <button class="nav-item" data-filter="active">
+                    <i class="bi bi-clock"></i>
+                    <span>Active</span>
+                </button>
+
+                <button class="nav-item" data-filter="completed">
+                    <i class="bi bi-check-circle"></i>
+                    <span>Completed</span>
+                </button>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>TaskFlow</p>
+                <small>Simple. Focused. Productive.</small>
+            </div>
+
+        </aside>
+
+
+        
+        <main class="main">
+
+            <!-- Header -->
+            <header class="header">
+
+                <div>
+                    <p class="welcome">WORKSPACE</p>
+                    <h1>My Tasks</h1>
+                </div>
+
+                <div class="date">
+                    <i class="bi bi-calendar3"></i>
+                    <span id="currentDate"></span>
+                </div>
+
+            </header>
+
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="bi bi-list-task"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Tasks</span>
+                        <strong id="totalTasks">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="bi bi-hourglass-split"></i>
+                    </div>
+
+                    <div>
+                        <span>In Progress</span>
+                        <strong id="activeTasks">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+
+                    <div>
+                        <span>Completed</span>
+                        <strong id="completedTasks">0</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            
+            <section class="progress-card">
+
+                <div class="progress-header">
+
+                    <div>
+                        <h3>Today's Progress</h3>
+                        <p>Keep moving forward.</p>
+                    </div>
+
+                    <strong id="progressText">0%</strong>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+            </section>
+
+
+            
+            <section class="task-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Tasks</h2>
+                        <p>Manage your daily activities</p>
+                    </div>
+
+                    <button id="clearCompleted" class="clear-btn">
+                        <i class="bi bi-trash3"></i>
+                        Clear Completed
+                    </button>
+
+                </div>
+
+
+
+                <div class="add-task">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What needs to be done?"
+                    >
+
+                <select id="priorityInput">
+
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+
+                    </select>
+
+                    <button id="addTaskBtn">
+                        <i class="bi bi-plus-lg"></i>
+                        Add Task
+                    </button>
+
+                </div>
+
+
+                
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tasks..."
+                    >
+
+                </div>
+
+
+              
+                <div id="taskList" class="task-list"></div>
+
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state">
+
+                    <div class="empty-icon">
+                        <i class="bi bi-check2-circle"></i>
+                    </div>
+
+                    <h3>No tasks found</h3>
+
+                    <p>
+                        Add a task to start organizing your day.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
